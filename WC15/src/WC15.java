@@ -78,7 +78,24 @@ public class WC15
    */
   public static String[][] fill2DWithLetters(String str, int rows, int cols)
   {
-    return new String[][] {{"42"}};
+    String[][] arr = new String[rows][cols];
+    int length = 0;
+    if (str.length() > rows * cols && length <= rows * cols)
+      for (int r = 0; r < rows; r++)
+        for (int c = 0; c < cols; c++)
+        {
+          arr[r][c] = str.substring(length, length + 1);
+          length++;
+        }
+    else if (str.length() < rows * cols)
+      for (int r = 0; r < rows; r++)
+        for (int c = 0; c < cols; c++)
+          if (length < str.length())
+          {
+            arr[r][c] = str.substring(length, length + 1);
+            length++;
+          }
+    return arr;
   }
 
   /**
