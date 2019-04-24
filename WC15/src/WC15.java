@@ -12,98 +12,54 @@ import java.util.List;
 
 public class WC15
 {
-  /**
-   * 
-   * Given a string of odd length, return the string length 3 from its middle,
-   * so "Candy" yields "and".
-   * 
-   * <pre>
-   * The string length will be at least 3.
-   * 
-   * middleThree("Candy") -> "and" 
-   * middleThree("and") -> "and"
-   * middleThree("solving") -> "lvi"
-   * </pre>
-   * 
-   * @param letters
-   * @return
-   */
+  public static final int DIVIDE_BY_TWO = 2;
+
   public static String centralThree(String letters)
   {
-    //TODO: Finish
-    return "no";
+    return letters.substring(letters.length() / DIVIDE_BY_TWO - 1,
+      letters.length() / DIVIDE_BY_TWO + DIVIDE_BY_TWO);
   }
 
-  /**
-   * Given a string, return a version without the first 2 chars. Except keep the
-   * first char if it is 'a' and keep the second char if it is 'b'. The string
-   * may be any length. Harder than it looks.
-   * 
-   * <pre>
-   * PRECONDITION: str will be lowercase and length will be at least two
-   * deFront("Hello") -> "llo" 
-   * deFront("java") -> "va" 
-   * deFront("away") -> "aay"
-   * </pre>
-   * 
-   * @param str
-   * @return
-   */
   public static String chopFront(String str)
   {
-    //TODO: Finish
-    return "no";
+    String word = "";
+    if (str.substring(0, 1).equals("a"))
+      word += "a";
+    if (str.substring(1, 2).equals("b"))
+      word += "b";
+    if (str.length() > 1)
+      word += str.substring(2, str.length());
+    return word;
   }
 
-  /**
-   * 
-   * Given a string, if one or both of the first 2 chars is 'x', return the
-   * string without those 'x' chars, and otherwise return the string unchanged.
-   * This is a little harder than it looks.
-   * 
-   * <pre>
-   * withoutX2("xHi") -> "Hi" 
-   * withoutX2("Hxi") -> "Hi" 
-   * withoutX2("Hi") -> "Hi"
-   * </pre>
-   * 
-   * @param str
-   * @return
-   */
   public static String hateX(String str)
   {
-    //TODO: Finish
-    return "no";
+    String word = "";
+    if (!str.substring(0, 1).equals("x"))
+      word += str.substring(0, 1);
+    if (!str.substring(1, 2).equals("x"))
+      word += str.substring(1, 2);
+    if (str.length() > 1)
+      word += str.substring(2, str.length());
+    return word;
   }
 
-  /**
-   * Swaps all values in the specified 2 rows of mat.
-   * 
-   * @param mat
-   *          the array
-   * @param rowAIndex
-   *          the index of a row to be swapped
-   * @param rowBIndex
-   *          the index of a row to be swapped
-   */
   public static void swapRows(int[][] mat, int rowAIndex, int rowBIndex)
   {
-    //TODO: Finish
+    int[] temp = mat[rowAIndex];
+    mat[rowAIndex] = mat[rowBIndex];
+    mat[rowBIndex] = temp;
   }
 
-  /**
-   * Swaps all values in the specified 2 columns of mat.
-   * 
-   * @param mat
-   *          the array
-   * @param colAIndex
-   *          the index of a column to be swapped
-   * @param colBIndex
-   *          the index of a column to be swapped
-   */
   public static void swapColumns(int[][] mat, int colAIndex, int colBIndex)
   {
-    //TODO: Finish
+    int[] temp = new int[mat.length];
+    for (int i = 0; i < mat.length; i++)
+    {
+      temp[i] = mat[i][colAIndex];
+      mat[i][colAIndex] = mat[i][colBIndex];
+      mat[i][colBIndex] = temp[i];
+    }
   }
 
   /**
@@ -122,7 +78,6 @@ public class WC15
    */
   public static String[][] fill2DWithLetters(String str, int rows, int cols)
   {
-    //TODO: Finish
     return new String[][] {{"42"}};
   }
 
@@ -155,7 +110,6 @@ public class WC15
    */
   public static int[][] fillDownAndUp(int[] vals, int rows, int cols)
   {
-    //TODO: Finish
     return new int[][] {{42}};
   }
 
@@ -189,9 +143,8 @@ public class WC15
    * @return a smaller array containing the specified elements
    */
   public static int[][] crop2D(int[][] mat, int startRow, int startCol,
-      int endRow, int endCol)
+    int endRow, int endCol)
   {
-    //TODO: Finish
     return new int[][] {{42}};
   }
 
