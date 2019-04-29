@@ -98,36 +98,42 @@ public class WC15
     return arr;
   }
 
-  /**
-   * Returns an array with the specified number of rows and columns that
-   * contains the elements of vals in the order specified below. Elements from
-   * vals are placed in the array by moving down the first column, up the second
-   * column and so on.
-   * 
-   * <pre>
-   * For example, if vals was:
-   * {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
-   * 
-   * rows was 3 and cols was 4,
-   * the returned array would be:
-   * { {1, 6, 7, 12},
-   *   {2, 5, 8, 11},
-   *   {3, 4, 9, 10} }
-   * 
-   * Precondition: vals.length == rows * cols
-   * </pre>
-   * 
-   * @param vals
-   *          the elements
-   * @param rows
-   *          the number of rows in the array to be returned
-   * @param cols
-   *          the number of columns in the array to be returned
-   * @return an array containing the elements from vals in the specified order
-   */
   public static int[][] fillDownAndUp(int[] vals, int rows, int cols)
   {
-    return new int[][] {{42}};
+    int[][] arr = new int[rows][cols];
+    int count = 0;
+    int rVal = 0;
+    int cVal = 0;
+    for (int c = 0; c < vals.length; c++)
+    {
+      if (rVal < rows && cVal < cols)
+      {
+        for (int i = 0; i < rows; i++)
+        {
+          arr[rVal][cVal] = vals[c];
+          rVal++;
+          count++;
+          if (c < vals.length - 1)
+            c++;
+        }
+        cVal++;
+      }
+      if (count == rows && cVal < cols)
+      {
+        rVal--;
+        for (int i = 0; i < rows; i++)
+        {
+          arr[rVal][cVal] = vals[c];
+          if (rVal > 0)
+            rVal--;
+          count--;
+          if (c < vals.length - 1 && i + 1 != rows)
+            c++;
+        }
+        cVal++;
+      }
+    }
+    return arr;
   }
 
   /**
