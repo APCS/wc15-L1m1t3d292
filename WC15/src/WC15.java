@@ -62,20 +62,6 @@ public class WC15
     }
   }
 
-  /**
-   * Returns an array with the specified number of rows and columns containing
-   * the characters from str in row-major order. If str.length() is greater than
-   * rows * cols, extra characters are ignored. If str.length() is less than
-   * rows * cols, the remaining elements in the returned array contain null.
-   * 
-   * @param str
-   *          the string to be placed in an array
-   * @param rows
-   *          the number of rows in the array to be returned
-   * @param cols
-   *          the number of columns in the array to be returned
-   * @return an array containing the characters from str in row-major order
-   */
   public static String[][] fill2DWithLetters(String str, int rows, int cols)
   {
     String[][] arr = new String[rows][cols];
