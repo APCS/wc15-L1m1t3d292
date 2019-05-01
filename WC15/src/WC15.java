@@ -123,7 +123,7 @@ public class WC15
   }
 
   public static int[][] crop2D(int[][] mat, int startRow, int startCol,
-    int endRow, int endCol)
+      int endRow, int endCol)
   {
     int[][] arr = new int[(endRow - startRow) + 1][(endCol - startCol) + 1];
     for (int r = startRow; r <= endRow; r++)
