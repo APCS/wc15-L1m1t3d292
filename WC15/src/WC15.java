@@ -122,39 +122,14 @@ public class WC15
     return arr;
   }
 
-  /**
-   * Returns a smaller array containing the elements in the specified range of
-   * the mat.
-   * 
-   * For example,
-   * 
-   * <pre>
-   * mat: { {10, 9, 8, 7}, 
-   *        {6, 5, 4, 3}, 
-   *        {2, 1, -1, 0} }
-   * 
-   * startRow: 0, startCol: 1, endRow: 1, endCol: 2
-   * 
-   * would yield: { {9, 8},
-   *                {5, 4} }
-   * </pre>
-   * 
-   * @param mat
-   *          the 2D array containing the original elements
-   * @param startRow
-   *          the first row to be kept
-   * @param startCol
-   *          the first column to be kept
-   * @param endRow
-   *          the last row to be kept
-   * @param endCol
-   *          the last column to be kept
-   * @return a smaller array containing the specified elements
-   */
   public static int[][] crop2D(int[][] mat, int startRow, int startCol,
     int endRow, int endCol)
   {
-    return new int[][] {{42}};
+    int[][] arr = new int[(endRow - startRow) + 1][(endCol - startCol) + 1];
+    for (int r = startRow; r <= endRow; r++)
+      for (int c = startCol; c <= endCol; c++)
+        arr[r - startRow][c - startCol] = mat[r][c];
+    return arr;
   }
 
 }
